@@ -36,9 +36,145 @@ border-radius:5px;
 cursor:pointer;
 }
 
+/* STORY SECTION */
+
 .story{
-padding:80px 20px;
-background:white;
+padding:120px 10%;
+text-align:center;
+background:linear-gradient(135deg,#eef2ff,#f5f3ff,#e9e7ff);
+position:relative;
+overflow:hidden;
+}
+
+/* glowing background */
+
+.story::before{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:rgba(139,92,246,0.25);
+border-radius:50%;
+top:-150px;
+left:-150px;
+filter:blur(120px);
+}
+
+.story::after{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:rgba(99,102,241,0.25);
+border-radius:50%;
+bottom:-120px;
+right:-120px;
+filter:blur(120px);
+}
+
+/* heading */
+
+.story h2{
+font-size:44px;
+margin-bottom:70px;
+color:#1e3a8a;
+}
+
+/* container */
+
+.story-container{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+max-width:1100px;
+margin:auto;
+}
+
+/* cards */
+
+.story-card{
+background:linear-gradient(145deg,#ffffff,#f3f4ff);
+padding:40px 30px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+transition:all .4s ease;
+position:relative;
+opacity:0;
+transform:translateY(40px);
+}
+
+/* gradient accent */
+
+.story-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:linear-gradient(90deg,#6366f1,#8b5cf6);
+border-radius:18px 18px 0 0;
+}
+
+/* hover effect */
+
+.story-card:hover{
+transform:translateY(-15px);
+box-shadow:0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* icon */
+
+.icon{
+width:70px;
+height:70px;
+margin:auto;
+margin-bottom:20px;
+background:linear-gradient(135deg,#6366f1,#8b5cf6);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:white;
+box-shadow:0 10px 25px rgba(99,102,241,0.4);
+animation:float 4s ease-in-out infinite;
+}
+
+/* floating animation */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+/* text */
+
+.story-card h3{
+color:#1e3a8a;
+margin-bottom:15px;
+font-size:20px;
+}
+
+.story-card p{
+color:#555;
+line-height:1.6;
+}
+
+/* reveal animation */
+
+.story-card.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* mobile */
+
+@media(max-width:900px){
+.story-container{
+grid-template-columns:1fr;
+}
 }
 
 footer{
