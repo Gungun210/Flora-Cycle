@@ -37,7 +37,9 @@ export default function FloraCycleHero() {
 
   return (
     <>
+      
       <style>{`
+        /*Styles Section From Claude*/
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@200;300;400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { overflow-x: hidden; }
@@ -374,6 +376,7 @@ export default function FloraCycleHero() {
         <nav className="fc-nav">
           <a href="/" className="fc-logo">Flora<em>Cycle</em></a>
           <a href="#join" className="fc-nav-cta">Explore More</a>
+          
         </nav>
 
         <div className="fc-main">
@@ -426,11 +429,12 @@ export default function FloraCycleHero() {
                 <span className="fc-tag">Compost</span>
                 <span className="fc-tag">Handmade Goods</span>
               </div>
-
-              <div className={cl("fc-cta-row fc-fade d5", vis)}>
-                <button className="fc-btn fc-btn-primary">Register</button>
-                <button className="fc-btn fc-btn-ghost">Login</button>
+              
+              <div style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
+                  <a href="/login" className="fc-btn fc-btn-primary">Sign In</a>
+                  <a href="/register" className="fc-btn fc-btn-ghost">Register</a>
               </div>
+        
 
             </div>
           </div>
